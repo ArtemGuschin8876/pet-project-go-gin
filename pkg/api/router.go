@@ -9,7 +9,6 @@ import (
 
 func NewRouter(db *sql.DB) *gin.Engine {
 	r := gin.Default()
-	gin.SetMode(gin.ReleaseMode)
 
 	components := initializers.InitializeComponents(db)
 

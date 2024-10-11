@@ -1,0 +1,1 @@
+DROP TABlE IF EXISTS gameslist;
