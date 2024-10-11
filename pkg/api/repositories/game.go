@@ -78,7 +78,6 @@ func (g *GameRepository) GetByID(id string) (*models.Game, error) {
 		return nil, err
 	}
 
-	g.Cfg.Logger.Debug().Msgf("Successfully fetched game: %+v", game)
 	return &game, nil
 }
 

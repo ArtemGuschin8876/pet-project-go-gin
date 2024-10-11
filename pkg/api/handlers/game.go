@@ -59,7 +59,7 @@ func (g *GameHandler) GetGameByID(c *gin.Context) {
 	game, err := g.GameRepository.GetByID(idParam)
 	if err != nil {
 		g.GameRepository.Cfg.Logger.Err(err).Msg("error fetching game")
-		c.JSON(http.StatusNotFound, gin.H{"error": "Message not found"})
+		c.JSON(http.StatusNotFound, gin.H{"error": "game not found"})
 		return
 	}
 
