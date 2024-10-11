@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"games-pet-project/pkg/api/handlers"
 	"games-pet-project/pkg/api/repositories"
+	"games-pet-project/pkg/config"
 )
 
 type AppComponents struct {
@@ -11,9 +12,9 @@ type AppComponents struct {
 }
 
 // Инициализируем компоненты сущностей
-func InitializeComponents(db *sql.DB) *AppComponents {
+func InitializeComponents(db *sql.DB, cfg config.Config) *AppComponents {
 
-	gameRep := repositories.NewGameRepository(db)
+	gameRep := repositories.NewGameRepository(db, cfg)
 	gameHandler := handlers.NewGameHandler(gameRep)
 
 	return &AppComponents{

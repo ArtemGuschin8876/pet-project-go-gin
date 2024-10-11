@@ -12,7 +12,7 @@ import (
 func Run(ctx context.Context, cfg config.Config, db *sql.DB) error {
 	s := http.Server{
 		Addr:    cfg.Port,
-		Handler: api.NewRouter(db),
+		Handler: api.NewRouter(db, cfg),
 	}
 
 	go func() {

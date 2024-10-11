@@ -21,7 +21,6 @@ func main() {
 
 	srvPort := os.Getenv("PORT")
 	dsnPostgres := os.Getenv("DSN_POSTGRES")
-
 	cfg := config.NewConfig(srvPort, dsnPostgres)
 
 	if err := realMain(cfg); err != nil {

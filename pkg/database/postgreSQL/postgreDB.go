@@ -12,6 +12,7 @@ import (
 const driverPostgres = "postgres"
 
 func ConnectToDB(dsn string, cfg config.Config) (*sql.DB, error) {
+
 	db, err := sql.Open(driverPostgres, dsn)
 	if err != nil {
 		cfg.Logger.Err(err).Msg("error openning database")
